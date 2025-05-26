@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "../ui/badge";
+import Marquee from "../ui/marquee";
 
 const services = [
   {
@@ -46,6 +47,7 @@ const Services = () => {
     <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
+          <Badge className="mb-4">Services</Badge>
           <h2 className="section-title">Our Services</h2>
           <p className="section-subtitle">
             We offer a wide range of services to help grow your channel. Whether
@@ -53,7 +55,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
           {services.map((service, index) => (
             <Card
               key={index}
@@ -76,19 +78,18 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Link
-            href="/#call"
-            className="group relative inline-flex items-center"
-          >
-            <div className="bg-primary text-white text-xs px-3 py-1 rounded-r absolute left-0 -translate-y-1/2 top-1/2">
-              <span className="text-[10px] uppercase font-medium tracking-wide">
-                Click here to book a call
-              </span>
-            </div>
-            <Button className="btn-primary pl-32 pr-6">
-              Skyrocket your views!
-            </Button>
+        <div className="mt-12">
+          <Link href="/#call">
+            <Marquee
+              items={[
+                { type: "text", content: "🔥 Skyrocket your views!" },
+                // { type: "image", content: "/logos/devfest.png" },
+                { type: "text", content: "🚀 Click here to book a call" },
+                // { type: "image", content: "/logos/openai.png" },
+              ]}
+              direction="left"
+              speed={60}
+            />
           </Link>
         </div>
 
