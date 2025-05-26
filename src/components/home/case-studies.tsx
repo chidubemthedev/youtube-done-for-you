@@ -8,7 +8,7 @@ import { Badge } from "../ui/badge";
 
 export default function CaseStudies() {
   return (
-    <section className="py-16 md:py-24 text-secondary-foreground">
+    <section className="text-secondary-foreground">
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <Badge className="mb-4">Case Studies</Badge>
@@ -21,7 +21,7 @@ export default function CaseStudies() {
 
         <div className="grid grid-cols-1 gap-12 mx-auto">
           {/* Case Study 1 */}
-          <Card className="border-0 shadow-none bg-gray-800">
+          <Card className="border-0 shadow-none bg-gray-800 p-8">
             <CardContent className="p-0">
               <div className="space-y-6">
                 <div className="bg-white/10 p-3 inline-block rounded-lg uppercase text-sm font-medium text-white">
@@ -124,7 +124,7 @@ export default function CaseStudies() {
           </Card>
 
           {/* Case Study 2 */}
-          <Card className="border-0 shadow-none bg-gray-800">
+          <Card className="border-0 shadow-none bg-gray-800 p-8">
             <CardContent className="p-0">
               <div className="space-y-6">
                 <div className="bg-white/10 p-3 inline-block rounded-lg uppercase text-sm font-medium text-white">
