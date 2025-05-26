@@ -1,3 +1,4 @@
+import Benefits from "@/components/home/benefits";
 import Hero from "@/components/home/hero";
 import OurWork from "@/components/home/our-work";
 import Services from "@/components/home/services";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Services />
       <OurWork />
+      <Benefits />
     </>
   );
 }
