@@ -59,10 +59,10 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="border border-border/50 bg-card overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="group border-2 border-black bg-card overflow-hidden hover:bg-primary hover:shadow-md hover:text-white transition-all duration-300"
             >
-              <CardContent className="p-6">
-                <div className="mb-4">
+              <CardContent className="flex gap-4 p-6">
+                <div className="shrink-0 mb-4">
                   <Image
                     src={service.icon}
                     alt={service.title}
@@ -71,8 +71,14 @@ const Services = () => {
                     className="h-12 w-12"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-white transition-colors duration-300">
+                    {service.description}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}
