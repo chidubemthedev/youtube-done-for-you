@@ -1,6 +1,7 @@
 import Benefits from "@/components/home/benefits";
 import CaseStudies from "@/components/home/case-studies";
 import CTA from "@/components/home/cta";
+import FAQ from "@/components/home/faq";
 import Hero from "@/components/home/hero";
 import HowItWorks from "@/components/home/how-it-works";
 import OurWork from "@/components/home/our-work";
@@ -19,6 +20,7 @@ export default function Home() {
       <Results />
       <HowItWorks />
       <Testimonials />
+      <FAQ />
       <CTA />
     </>
   );
