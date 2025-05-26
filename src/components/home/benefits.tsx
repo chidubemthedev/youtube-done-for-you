@@ -47,18 +47,18 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6"
+              className="flex flex-col border-2 border-black rounded-2xl p-6"
             >
               <div className="mb-6">
+                <h3 className="text-4xl font-semibold mb-3">{benefit.title}</h3>
                 <Image
                   src={benefit.icon}
                   alt={benefit.title}
-                  width={64}
-                  height={64}
-                  className="h-16 w-16 object-contain"
+                  width={100}
+                  height={100}
+                  className="h-full w-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
               <p className="text-muted-foreground">{benefit.description}</p>
             </div>
           ))}
