@@ -20,7 +20,10 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link href="/#call">
-            <Button className="btn-primary py-6 px-8 text-base">
+            <Button
+              className="btn-primary py-6 px-8 text-base"
+              variant="threeD"
+            >
               Book a Call
             </Button>
           </Link>

@@ -35,7 +35,7 @@ const Nav = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary hover:underline transition-all"
             >
               {link.name}
             </Link>
@@ -44,7 +44,10 @@ const Nav = () => {
 
         <div className="flex items-center gap-4">
           <Link href="/#call" className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-white rounded-md">
+            <Button
+              className="bg-primary hover:bg-primary/90 text-white rounded-md"
+              variant="threeD"
+            >
               Book a Call
             </Button>
           </Link>
