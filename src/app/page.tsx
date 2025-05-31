@@ -19,8 +19,8 @@ export default function Home() {
       <OurWork />
       <Benefits />
       <CaseStudies />
-      <Results />
       <HowItWorks />
+      <Results />
       <Testimonials />
       <Pricing />
       <Contact />

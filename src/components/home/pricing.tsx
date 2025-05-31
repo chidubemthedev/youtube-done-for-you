@@ -11,6 +11,7 @@ import {
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import AdsMarquee from "../ui/ad-marquee";
 
 const pricingPlans = [
   {
@@ -67,9 +68,11 @@ const pricingPlans = [
 export default function Pricing() {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-background">
+      <AdsMarquee />
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <Badge className="mb-4">Pricing</Badge>
+          <Badge className="mb-4 mt-12">Pricing</Badge>
           <h2 className="section-title mb-6">Choose One of Our Packages</h2>
           <p className="section-subtitle">
             Discover which package is just right for you!
