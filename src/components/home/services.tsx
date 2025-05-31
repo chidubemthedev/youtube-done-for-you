@@ -44,7 +44,7 @@ const services = [
 ];
 const Services = () => {
   return (
-    <section id="services" className="bg-green-500">
+    <section id="services">
       <div className="mt-12">
         <Link href="/#call">
           <Marquee
@@ -60,7 +60,7 @@ const Services = () => {
         </Link>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-[100px]">
         <div className="text-center mb-12 md:mb-16">
           <Badge className="mb-4 mt-12">Services</Badge>
           <h2 className="section-title">Our Services</h2>
@@ -70,11 +70,11 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group border-2 border-black bg-card overflow-hidden hover:bg-primary hover:shadow-md hover:text-white transition-all duration-300"
+              className="group border-2 border-black bg-card overflow-hidden hover:bg-primary hover:text-white transition-all duration-300 shadow-[0_6px_0_0_#000000] hover:shadow-[0_0_0_0_#000000] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-none"
             >
               <CardContent className="flex gap-4 p-6">
                 <div className="shrink-0 mb-4">
