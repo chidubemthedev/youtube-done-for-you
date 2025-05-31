@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import AdsMarquee from "../ui/ad-marquee";
 import { Badge } from "../ui/badge";
-import Marquee from "../ui/marquee";
 
 const services = [
   {
@@ -45,20 +44,7 @@ const services = [
 const Services = () => {
   return (
     <section id="services">
-      <div className="mt-12">
-        <Link href="/#call">
-          <Marquee
-            items={[
-              { type: "text", content: "🔥 Skyrocket your views!" },
-              // { type: "image", content: "/logos/devfest.png" },
-              { type: "text", content: "🚀 Click here to book a call" },
-              // { type: "image", content: "/logos/openai.png" },
-            ]}
-            direction="left"
-            speed={60}
-          />
-        </Link>
-      </div>
+      <AdsMarquee />
 
       <div className="container mx-auto px-4 md:px-[100px]">
         <div className="text-center mb-12 md:mb-16">
@@ -70,7 +56,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-16">
           {services.map((service, index) => (
             <Card
               key={index}
@@ -98,33 +84,9 @@ const Services = () => {
             </Card>
           ))}
         </div>
-
-        {/* Red separator */}
-        <div className="mt-24 relative">
-          <Image
-            src="https://ext.same-assets.com/452876233/1528811474.svg"
-            alt="Divider"
-            width={1400}
-            height={40}
-            className="w-full h-auto"
-          />
-        </div>
       </div>
 
-      <div className="mt-12">
-        <Link href="/#call">
-          <Marquee
-            items={[
-              { type: "text", content: "🔥 Skyrocket your views!" },
-              // { type: "image", content: "/logos/devfest.png" },
-              { type: "text", content: "🚀 Click here to book a call" },
-              // { type: "image", content: "/logos/openai.png" },
-            ]}
-            direction="left"
-            speed={60}
-          />
-        </Link>
-      </div>
+      <AdsMarquee />
     </section>
   );
 };

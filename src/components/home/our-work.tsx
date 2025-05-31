@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Badge } from "../ui/badge";
+import AdsMarquee from "../ui/ad-marquee";
 
 // Sample thumbnails URLs
 const thumbnails = [
@@ -21,14 +21,10 @@ const thumbnails = [
 
 export default function OurWork() {
   return (
-    <section id="our-work" className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 border-2 border-black rounded-2xl">
+    <section id="our-work" className="py-16 md:py-24 red-background relative">
+      <div className="container mx-auto px-4 border-2 border-black rounded-2xl bg-background">
         <div className="text-center mb-12 md:mb-16">
-          <div className="bg-primary text-white py-1 px-3 inline-block rounded mb-2">
-            <span className="text-xs uppercase font-medium tracking-wider">
-              Our Work
-            </span>
-          </div>
+          <Badge className="mb-4 mt-12">Our Work</Badge>
           <h2 className="section-title mb-6">Some of Our Work</h2>
           <p className="section-subtitle">
             Take a look at some of our premium quality thumbnail designs and
@@ -55,31 +51,9 @@ export default function OurWork() {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a
-            href="https://drive.google.com/drive/u/7/folders/1Ct-2HogGOi3Bt1TtTXGnBF3bfTNDdLak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-background text-foreground hover:bg-muted transition-colors border border-border/80 rounded-md px-6 py-3 font-medium"
-          >
-            See More Works
-          </a>
-
-          <Link
-            href="/#call"
-            className="group relative inline-flex items-center"
-          >
-            <div className="bg-primary text-white text-xs px-3 py-1 rounded-r absolute left-0 -translate-y-1/2 top-1/2">
-              <span className="text-[10px] uppercase font-medium tracking-wide">
-                Click here to book a call
-              </span>
-            </div>
-            <Button className="btn-primary pl-32 pr-6">
-              Skyrocket your views!
-            </Button>
-          </Link>
-        </div>
+      </div>
+      <div className="absolute bottom-0 left-0 w-full">
+        <AdsMarquee />
       </div>
     </section>
   );

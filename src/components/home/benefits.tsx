@@ -1,8 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Badge } from "../ui/badge";
 
 const benefits = [
   {
@@ -28,13 +29,9 @@ const benefits = [
 export default function Benefits() {
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <div className="bg-primary text-white py-1 px-3 inline-block rounded mb-2">
-            <span className="text-xs uppercase font-medium tracking-wider">
-              Benefits
-            </span>
-          </div>
+          <Badge className="mb-4 mt-12">Benefits</Badge>
           <h2 className="section-title mb-6">
             YT Automation easier than ever before
           </h2>

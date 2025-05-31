@@ -130,3 +130,11 @@
     @apply text-lg md:text-xl text-muted-foreground text-center mb-5 max-w-3xl mx-auto;
   }
 }
+
+.red-background {
+  background-image: url("/images/background-red.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

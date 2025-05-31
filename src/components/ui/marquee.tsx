@@ -13,18 +13,22 @@ type MarqueeProps = {
   items: MarqueeItem[];
   direction?: "left" | "right";
   speed?: number; // pixels per second
+  backgroundColor?: string; // optional background color
+  textColor?: string; // optional text color
 };
 
 export default function Marquee({
   items,
   direction = "left",
   speed = 50,
+  backgroundColor = "bg-white", // default background color
+  textColor = "text-gray-700", // default text color
 }: MarqueeProps) {
   const [isHovered, setIsHovered] = useState(false);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [marqueeWidth, setMarqueeWidth] = useState(0);
 
-  const duplicatedItems = [...items, ...items]; // duplicate for seamless loop
+  const duplicatedItems = [...items, ...items, ...items, ...items]; // duplicate for seamless loop
 
   useEffect(() => {
     if (marqueeRef.current) {
@@ -51,7 +55,9 @@ export default function Marquee({
 
   return (
     <div
-      className="overflow-hidden whitespace-nowrap w-full border-y py-3 bg-white relative"
+      className={`overflow-hidden whitespace-nowrap w-full py-3 relative ${
+        isHovered ? "cursor-pointer" : ""
+      } ${backgroundColor} ${textColor}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -62,7 +68,7 @@ export default function Marquee({
       >
         {duplicatedItems.map((item, idx) =>
           item.type === "text" ? (
-            <span key={idx} className="text-lg font-medium text-gray-700">
+            <span key={idx} className="text-lg font-medium">
               {item.content.toString()}
             </span>
           ) : (
