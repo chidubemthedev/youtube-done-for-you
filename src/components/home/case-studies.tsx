@@ -9,7 +9,7 @@ import { Badge } from "../ui/badge";
 export default function CaseStudies() {
   return (
     <section className="text-secondary-foreground">
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <Badge className="mb-4">Case Studies</Badge>
           <h2 className="section-title">Here are some of our case studies</h2>
@@ -238,7 +238,7 @@ export default function CaseStudies() {
         <div className="text-center mt-12">
           <Link href="/#call">
             <Button
-              className="bg-gray-800 text-secondary hover:bg-gray-800/90 py-10 px-8 text-2xl w-full"
+              className="bg-gray-800 shadow-[0_6px_0_0_#000000] hover:shadow-[0_0_0_0_#000000] text-secondary hover:bg-black py-10 px-8 text-2xl w-full transition-all duration-700"
               size="lg"
             >
               Want results like these for your channel?
