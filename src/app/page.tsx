@@ -1,5 +1,6 @@
 import Benefits from "@/components/home/benefits";
 import CaseStudies from "@/components/home/case-studies";
+import Contact from "@/components/home/contact";
 import CTA from "@/components/home/cta";
 import FAQ from "@/components/home/faq";
 import Hero from "@/components/home/hero";
@@ -22,6 +23,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <Pricing />
+      <Contact />
       <FAQ />
       <CTA />
     </>
