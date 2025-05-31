@@ -44,10 +44,25 @@ const services = [
 ];
 const Services = () => {
   return (
-    <section id="services" className="py-16 md:py-24 bg-green-500">
-      <div className="container">
+    <section id="services" className="bg-green-500">
+      <div className="mt-12">
+        <Link href="/#call">
+          <Marquee
+            items={[
+              { type: "text", content: "🔥 Skyrocket your views!" },
+              // { type: "image", content: "/logos/devfest.png" },
+              { type: "text", content: "🚀 Click here to book a call" },
+              // { type: "image", content: "/logos/openai.png" },
+            ]}
+            direction="left"
+            speed={60}
+          />
+        </Link>
+      </div>
+
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <Badge className="mb-4">Services</Badge>
+          <Badge className="mb-4 mt-12">Services</Badge>
           <h2 className="section-title">Our Services</h2>
           <p className="section-subtitle">
             We offer a wide range of services to help grow your channel. Whether
@@ -84,21 +99,6 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-12">
-          <Link href="/#call">
-            <Marquee
-              items={[
-                { type: "text", content: "🔥 Skyrocket your views!" },
-                // { type: "image", content: "/logos/devfest.png" },
-                { type: "text", content: "🚀 Click here to book a call" },
-                // { type: "image", content: "/logos/openai.png" },
-              ]}
-              direction="left"
-              speed={60}
-            />
-          </Link>
-        </div>
-
         {/* Red separator */}
         <div className="mt-24 relative">
           <Image
@@ -109,6 +109,21 @@ const Services = () => {
             className="w-full h-auto"
           />
         </div>
+      </div>
+
+      <div className="mt-12">
+        <Link href="/#call">
+          <Marquee
+            items={[
+              { type: "text", content: "🔥 Skyrocket your views!" },
+              // { type: "image", content: "/logos/devfest.png" },
+              { type: "text", content: "🚀 Click here to book a call" },
+              // { type: "image", content: "/logos/openai.png" },
+            ]}
+            direction="left"
+            speed={60}
+          />
+        </Link>
       </div>
     </section>
   );
