@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import Link from "next/link";
 import { Badge } from "../ui/badge";
 
 const pricingPlans = [
@@ -68,7 +67,7 @@ const pricingPlans = [
 export default function Pricing() {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-background">
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <Badge className="mb-4">Pricing</Badge>
           <h2 className="section-title mb-6">Choose One of Our Packages</h2>
@@ -82,18 +81,18 @@ export default function Pricing() {
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
-                className={`border border-border/50 overflow-hidden flex flex-col h-full ${
-                  plan.popular ? "relative shadow-lg" : ""
+                className={`border-2 border-black overflow-hidden flex flex-col h-fit transition-all duration-300 shadow-[0_6px_0_0_#000000] hover:shadow-[0_0_0_0_#000000] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-none ${
+                  plan.popular ? "relative" : ""
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-xs uppercase font-medium tracking-wider">
+                  <div className="bg-primary text-white py-2 px-4 ml-6 text-xs uppercase font-medium tracking-wider w-fit rounded-sm">
                     Most Popular
                   </div>
                 )}
 
                 <CardHeader className="pb-0">
-                  <CardTitle className="flex flex-col items-center gap-4">
+                  <CardTitle className="flex flex-col  gap-4">
                     <span className="text-2xl font-bold">{plan.name}</span>
                     <div className="flex items-end gap-1">
                       <span className="text-4xl font-bold">{plan.price}</span>
@@ -102,7 +101,7 @@ export default function Pricing() {
                       </span>
                     </div>
                   </CardTitle>
-                  <CardDescription className="text-center pt-2">
+                  <CardDescription className="pt-2">
                     {plan.description}
                   </CardDescription>
                 </CardHeader>
@@ -141,20 +140,6 @@ export default function Pricing() {
               </Card>
             ))}
           </div>
-        </div>
-
-        <div className="text-center mt-12 pt-16 border-t border-border/40">
-          <h3 className="text-xl font-medium mb-4">Need a Custom Package?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We offer custom packages for creators who need regular content
-            creation. Book a call to discuss your specific needs and get a
-            tailored package.
-          </p>
-          <Link href="/#call">
-            <Button className="btn-primary py-6 px-8 text-base">
-              Book a Call for Custom Pricing
-            </Button>
-          </Link>
         </div>
       </div>
     </section>
