@@ -22,7 +22,7 @@ const thumbnails = [
 export default function OurWork() {
   return (
     <section id="our-work" className="py-16 md:py-24 bg-background">
-      <div className="container">
+      <div className="container mx-auto px-4 border-2 border-black rounded-2xl">
         <div className="text-center mb-12 md:mb-16">
           <div className="bg-primary text-white py-1 px-3 inline-block rounded mb-2">
             <span className="text-xs uppercase font-medium tracking-wider">
