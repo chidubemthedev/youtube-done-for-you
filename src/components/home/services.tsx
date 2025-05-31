@@ -44,7 +44,7 @@ const services = [
 ];
 const Services = () => {
   return (
-    <section id="services" className="py-16 md:py-24 bg-background">
+    <section id="services" className="py-16 md:py-24 bg-green-500">
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <Badge className="mb-4">Services</Badge>

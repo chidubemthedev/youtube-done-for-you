@@ -49,41 +49,41 @@ const Hero = () => {
             </Button>
           </Link>
         </div>
+      </div>
 
-        <div className="mt-12">
-          <p className="text-2xl capitalize font-[900] mb-8">
-            Trusted By More Than <span className="text-primary">300</span>+
-            Channels
-          </p>
+      <div className="mt-12">
+        <p className="text-2xl capitalize font-[900] mb-8 text-center">
+          Trusted By More Than <span className="text-primary">300</span>+
+          Channels
+        </p>
 
-          <Marquee
-            items={[
-              { type: "image", content: Hero1 },
-              { type: "image", content: Hero2 },
-              { type: "image", content: Hero3 },
-              { type: "image", content: Hero4 },
-              { type: "image", content: Hero5 },
-              { type: "image", content: Hero6 },
-              { type: "image", content: Hero7 },
-            ]}
-            speed={50}
-            direction="left"
-          />
-          <Marquee
-            items={[
-              { type: "image", content: Hero8 },
-              { type: "image", content: Hero9 },
-              { type: "image", content: Hero10 },
-              { type: "image", content: Hero11 },
-              { type: "image", content: Hero12 },
-              { type: "image", content: Hero13 },
-              { type: "image", content: Hero14 },
-              { type: "image", content: Hero15 },
-            ]}
-            speed={50}
-            direction="right"
-          />
-        </div>
+        <Marquee
+          items={[
+            { type: "image", content: Hero1 },
+            { type: "image", content: Hero2 },
+            { type: "image", content: Hero3 },
+            { type: "image", content: Hero4 },
+            { type: "image", content: Hero5 },
+            { type: "image", content: Hero6 },
+            { type: "image", content: Hero7 },
+          ]}
+          speed={50}
+          direction="left"
+        />
+        <Marquee
+          items={[
+            { type: "image", content: Hero8 },
+            { type: "image", content: Hero9 },
+            { type: "image", content: Hero10 },
+            { type: "image", content: Hero11 },
+            { type: "image", content: Hero12 },
+            { type: "image", content: Hero13 },
+            { type: "image", content: Hero14 },
+            { type: "image", content: Hero15 },
+          ]}
+          speed={50}
+          direction="right"
+        />
       </div>
     </section>
   );
