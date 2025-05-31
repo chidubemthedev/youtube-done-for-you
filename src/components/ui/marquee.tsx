@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 
 type MarqueeItem = {
   type: "text" | "image";
-  content: string;
+  content: string | StaticImageData;
 };
 
 type MarqueeProps = {
@@ -63,7 +63,7 @@ export default function Marquee({
         {duplicatedItems.map((item, idx) =>
           item.type === "text" ? (
             <span key={idx} className="text-lg font-medium text-gray-700">
-              {item.content}
+              {item.content.toString()}
             </span>
           ) : (
             <div key={idx} className="w-12 h-12 relative">
@@ -71,7 +71,7 @@ export default function Marquee({
                 src={item.content}
                 alt="Marquee Image"
                 fill
-                className="object-contain"
+                className="object-contain rounded-full"
               />
             </div>
           )

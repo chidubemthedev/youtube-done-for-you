@@ -26,6 +26,10 @@ const buttonVariants = cva(
           "bg-red-600 text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#990f1a] transition-all duration-300 " +
           "hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#990f1a] " +
           "active:translate-y-[6px] active:shadow-none",
+        threeDYellow:
+          "bg-yellow-500 text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#b38f00] transition-all duration-300 " +
+          "hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#b38f00] " +
+          "active:translate-y-[6px] active:shadow-none",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

@@ -1,6 +1,21 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Marquee from "../ui/marquee";
+import Hero1 from "@/assets/images/hero-1.webp";
+import Hero2 from "@/assets/images/hero-2.webp";
+import Hero3 from "@/assets/images/hero-3.webp";
+import Hero4 from "@/assets/images/hero-4.webp";
+import Hero5 from "@/assets/images/hero-5.webp";
+import Hero6 from "@/assets/images/hero-6.webp";
+import Hero7 from "@/assets/images/hero-7.webp";
+import Hero8 from "@/assets/images/hero-8.webp";
+import Hero9 from "@/assets/images/hero-9.webp";
+import Hero10 from "@/assets/images/hero-10.webp";
+import Hero11 from "@/assets/images/hero-11.webp";
+import Hero12 from "@/assets/images/hero-12.avif";
+import Hero13 from "@/assets/images/hero-13.avif";
+import Hero14 from "@/assets/images/hero-14.avif";
+import Hero15 from "@/assets/images/hero-15.avif";
 
 const Hero = () => {
   return (
@@ -29,36 +44,45 @@ const Hero = () => {
           </Link>
 
           <Link href="/#our-work">
-            <Button variant="outline" className="py-6 px-8 text-base">
+            <Button variant="threeDYellow" className="py-6 px-8 text-base">
               See Our Work
             </Button>
           </Link>
         </div>
 
         <div className="mt-12">
-          <p className="text-sm uppercase font-medium text-muted-foreground mb-4">
-            Trusted By More Than 300+ Channels
+          <p className="text-2xl capitalize font-[900] mb-8">
+            Trusted By More Than <span className="text-primary">300</span>+
+            Channels
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 items-center">
-            {Array.from({ length: 11 }).map((_, index) => (
-              <div
-                key={index}
-                className="w-10 h-10 bg-muted rounded-full overflow-hidden"
-                style={{ opacity: 0.9 - index * 0.05 }}
-              >
-                <Image
-                  src={`https://ext.same-assets.com/452876233/${
-                    2029021627 + index
-                  }.jpeg`}
-                  alt={`Channel ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  width={100}
-                  height={100}
-                />
-              </div>
-            ))}
-          </div>
+          <Marquee
+            items={[
+              { type: "image", content: Hero1 },
+              { type: "image", content: Hero2 },
+              { type: "image", content: Hero3 },
+              { type: "image", content: Hero4 },
+              { type: "image", content: Hero5 },
+              { type: "image", content: Hero6 },
+              { type: "image", content: Hero7 },
+            ]}
+            speed={50}
+            direction="left"
+          />
+          <Marquee
+            items={[
+              { type: "image", content: Hero8 },
+              { type: "image", content: Hero9 },
+              { type: "image", content: Hero10 },
+              { type: "image", content: Hero11 },
+              { type: "image", content: Hero12 },
+              { type: "image", content: Hero13 },
+              { type: "image", content: Hero14 },
+              { type: "image", content: Hero15 },
+            ]}
+            speed={50}
+            direction="right"
+          />
         </div>
       </div>
     </section>
