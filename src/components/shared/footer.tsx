@@ -29,21 +29,19 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div>
-            <nav className="flex items-center justify-center gap-3">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          <nav className="flex items-center justify-center gap-6 my-6">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 mb-6">
             <Link
               href="https://www.instagram.com/ytvideos.io/"
               target="_blank"
