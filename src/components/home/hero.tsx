@@ -51,7 +51,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-12 relative">
+        <div className="absolute left-0 top-0 w-64 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+
         <p className="text-2xl capitalize font-[900] mb-8 text-center">
           Trusted By More Than <span className="text-primary">300</span>+
           Channels
