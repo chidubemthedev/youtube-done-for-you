@@ -40,7 +40,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="bg-background">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <div className="container mx-auto px-4 md:px-[100px] grid grid-cols-1 md:grid-cols-3 gap-16 mt-12">
         <div className="mb-12 md:mb-16 col-span-1">
           <Badge className="mb-4">Process</Badge>
           <h2 className="section-title text-left">How it Works</h2>
@@ -75,7 +75,10 @@ export default function HowItWorks() {
               </div>
               {index !== steps.length - 1 && (
                 <div className="flex justify-center">
-                  <ArrowBigDownDash className="w-8 h-8 text-muted-foreground" />
+                  <ArrowBigDownDash
+                    className="w-8 h-8 text-muted-foreground"
+                    fill="yellow"
+                  />
                 </div>
               )}
             </div>

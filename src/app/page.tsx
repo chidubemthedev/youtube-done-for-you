@@ -1,5 +1,6 @@
 import Benefits from "@/components/home/benefits";
 import CaseStudies from "@/components/home/case-studies";
+import CaseStudy2 from "@/components/home/case-studies-2";
 import Contact from "@/components/home/contact";
 import CTA from "@/components/home/cta";
 import FAQ from "@/components/home/faq";
@@ -19,6 +20,7 @@ export default function Home() {
       <OurWork />
       <Benefits />
       <CaseStudies />
+      <CaseStudy2 />
       <HowItWorks />
       <Results />
       <Testimonials />

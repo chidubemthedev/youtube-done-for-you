@@ -235,7 +235,7 @@ export default function CaseStudies() {
           </Card>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center my-12">
           <Link href="/#call">
             <Button
               className="bg-gray-800 shadow-[0_6px_0_0_#000000] hover:shadow-[0_0_0_0_#000000] text-secondary hover:bg-black py-10 px-8 text-2xl w-full transition-all duration-700"
