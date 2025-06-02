@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const navLinks = [
   { name: "Services", href: "/#services" },
@@ -20,13 +19,7 @@ const Nav = () => {
       <div className="flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="mr-6">
-            <Image
-              src="https://ext.same-assets.com/452876233/2066604167.png"
-              alt="YTVideos.io"
-              width={140}
-              height={40}
-              className="h-8 w-auto"
-            />
+            <h1 className="font-[900] text-[20px] tracking-wide">YTDFY.com</h1>
           </Link>
         </div>
 
