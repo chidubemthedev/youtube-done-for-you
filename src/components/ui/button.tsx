@@ -23,12 +23,12 @@ const buttonVariants = cva(
 
         /** 🔴 NEW realistic 3D variant **/
         threeD:
-          "bg-red-600 text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#990f1a] transition-all duration-300 " +
-          "hover:translate-y-[6px] hover:shadow-[0_0_0_0_#990f1a] " +
+          "bg-[#2563EB] text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#1E3A8A] transition-all duration-300 " +
+          "hover:translate-y-[6px] hover:shadow-[0_0_0_0_#1E3A8A] " +
           "active:translate-y-[6px] active:shadow-none",
         threeDYellow:
-          "bg-yellow-500 text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#b38f00] transition-all duration-300 " +
-          "hover:translate-y-[6px] hover:shadow-[0_0_0_0_#b38f00] " +
+          "bg-[#6B7280] text-white font-bold rounded-full px-6 py-2 shadow-[0_6px_0_0_#374151] transition-all duration-300 " +
+          "hover:translate-y-[6px] hover:shadow-[0_0_0_0_#374151] " +
           "active:translate-y-[6px] active:shadow-none",
       },
       size: {
