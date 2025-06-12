@@ -7,6 +7,7 @@ import { Badge } from "../ui/badge";
 import Benefit1 from "@/assets/images/benefit-1.avif";
 import Benefit2 from "@/assets/images/benefit-2.avif";
 import Benefit3 from "@/assets/images/benefit-3.avif";
+import { motion, backOut, easeOut } from "motion/react";
 
 const benefits = [
   {
@@ -31,23 +32,72 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <motion.section
+      className="py-16 md:py-24 bg-background"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.15 } },
+      }}
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: easeOut }}
+          viewport={{ once: true }}
+        >
           <Badge className="mb-4 mt-12">Benefits</Badge>
-          <h2 className="section-title mb-6">
+          <motion.h2
+            className="section-title mb-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: easeOut }}
+            viewport={{ once: true }}
+          >
             YT Automation easier than ever before
-          </h2>
-          <p className="section-subtitle">
+          </motion.h2>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: easeOut }}
+            viewport={{ once: true }}
+          >
             We simplify the process and make it effortless on your end!
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.18 } },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {benefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex flex-col border-2 border-black shadow-[0_6px_0_0_#000000] rounded-2xl p-6"
+              variants={{
+                hidden: { opacity: 0, y: 40, scale: 0.95 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.7 + index * 0.05, ease: backOut },
+                },
+              }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+              }}
+              whileTap={{ scale: 0.97 }}
             >
               <div className="mb-6">
                 <h3 className="text-4xl font-semibold mb-3 tracking-tighter">
@@ -64,11 +114,16 @@ export default function Benefits() {
                 </div>
               </div>
               <p className="text-muted-foreground">{benefit.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-        <div className="text-center">
+        </motion.div>
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
+          viewport={{ once: true }}
+        >
           <Link href="/#call">
             <Button
               variant={"threeD"}
@@ -77,8 +132,8 @@ export default function Benefits() {
               Book a Call
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

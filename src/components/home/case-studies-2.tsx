@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "../ui/badge";
 import Achievement1 from "@/assets/images/achievement-1.avif";
 import Achievement2 from "@/assets/images/achievement-2.avif";
@@ -11,6 +12,7 @@ import Achievement9 from "@/assets/images/achievement-9.avif";
 import Achievement10 from "@/assets/images/achievement-10.avif";
 import Achievement11 from "@/assets/images/achievement-11.avif";
 import Image from "next/image";
+import { motion, backOut, easeOut } from "motion/react";
 
 const CaseStudy2 = () => {
   const achievements = [
@@ -27,38 +29,94 @@ const CaseStudy2 = () => {
     Achievement10,
   ];
   return (
-    <section className="text-white bg-gray-800 py-12">
+    <motion.section
+      className="text-white bg-gray-800 py-12"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.15 } },
+      }}
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: easeOut }}
+          viewport={{ once: true }}
+        >
           <Badge className="mb-4">Case Studies</Badge>
-          <h2 className="section-title">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: easeOut }}
+            viewport={{ once: true }}
+          >
             Results we&apos;ve gotten for our clients
-          </h2>
-          <p className="section-subtitle">
+          </motion.h2>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: easeOut }}
+            viewport={{ once: true }}
+          >
             Read about the success we&apos;ve been able to generate for our
             clients!
-          </p>
-        </div>
-
-        {/* create the map here */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.12 } },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {achievements.map((achievement, index) => (
-            <Image
+            <motion.div
               key={index}
-              src={achievement}
-              alt={`Achievement ${index + 1}`}
-              className="w-full rounded-2xl border-2 border-white"
-              width={400}
-              height={300}
-            />
+              variants={{
+                hidden: { opacity: 0, y: 40, scale: 0.97 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.7 + index * 0.04, ease: backOut },
+                },
+              }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Image
+                src={achievement}
+                alt={`Achievement ${index + 1}`}
+                className="w-full rounded-2xl border-2 border-white"
+                width={400}
+                height={300}
+              />
+            </motion.div>
           ))}
-        </div>
-
-        <h1 className="mt-8 text-center font-bold text-2xl">
+        </motion.div>
+        <motion.h1
+          className="mt-8 text-center font-bold text-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
+          viewport={{ once: true }}
+        >
           We can keep going…
-        </h1>
+        </motion.h1>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

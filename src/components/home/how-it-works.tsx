@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { ArrowBigDownDash } from "lucide-react";
+import { motion, backOut, easeOut } from "motion/react";
 
 const steps = [
   {
@@ -39,23 +40,75 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-background">
+    <motion.section
+      className="bg-background"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.18 } },
+      }}
+    >
       <div className="container mx-auto px-4 md:px-[100px] grid grid-cols-1 md:grid-cols-3 gap-16 mt-12">
-        <div className="mb-12 md:mb-16 col-span-1">
+        <motion.div
+          className="mb-12 md:mb-16 col-span-1"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: easeOut }}
+          viewport={{ once: true }}
+        >
           <Badge className="mb-4">Process</Badge>
-          <h2 className="section-title text-left">How it Works</h2>
-          <p className="section-subtitle text-left">
+          <motion.h2
+            className="section-title text-left"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: easeOut }}
+            viewport={{ once: true }}
+          >
+            How it Works
+          </motion.h2>
+          <motion.p
+            className="section-subtitle text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: easeOut }}
+            viewport={{ once: true }}
+          >
             Go through a seamless process of scaling your own YouTube automation
             channel.
-          </p>
-        </div>
-
-        <div className="space-y-12 max-w-4xl mx-auto col-span-2">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="space-y-12 max-w-4xl mx-auto col-span-2"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.22 } },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {steps.map((step, index) => (
-            <div key={index} className="space-y-6">
-              <div
-                className={`flex flex-col border-2 border-black shadow-[0_6px_0_0_#000000] rounded-md gap-6 p-6`}
-              >
+            <motion.div
+              key={index}
+              className="space-y-6"
+              variants={{
+                hidden: { opacity: 0, y: 40, scale: 0.97 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.7 + index * 0.05, ease: backOut },
+                },
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex flex-col border-2 border-black shadow-[0_6px_0_0_#000000] rounded-md gap-6 p-6">
                 <Image
                   src={step.image}
                   alt={step.title}
@@ -74,17 +127,23 @@ export default function HowItWorks() {
                 </div>
               </div>
               {index !== steps.length - 1 && (
-                <div className="flex justify-center">
+                <motion.div
+                  className="flex justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1, ease: easeOut }}
+                  viewport={{ once: true }}
+                >
                   <ArrowBigDownDash
                     className="w-8 h-8 text-muted-foreground"
                     fill="yellow"
                   />
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
