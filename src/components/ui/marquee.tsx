@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 
@@ -27,6 +27,7 @@ export default function Marquee({
   const [isHovered, setIsHovered] = useState(false);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [marqueeWidth, setMarqueeWidth] = useState(0);
+  const controls = useAnimation();
 
   const duplicatedItems = [...items, ...items, ...items, ...items]; // duplicate for seamless loop
 
@@ -38,19 +39,36 @@ export default function Marquee({
 
   const animationSpeed = marqueeWidth / speed;
 
-  const animation = {
-    x:
-      direction === "left"
-        ? ["0%", `-${marqueeWidth}px`]
-        : [`-${marqueeWidth}px`, "0%"],
+  // Set initial x position for correct direction
+  const initialX = direction === "left" ? 0 : -marqueeWidth;
+
+  // Animation object for scrolling
+  const scrollAnimation = {
+    x: direction === "left" ? -marqueeWidth : 0,
     transition: {
-      x: {
-        repeat: Infinity,
-        repeatType: "loop",
-        ease: "linear",
-        duration: animationSpeed,
-      },
+      repeat: Infinity,
+      repeatType: "loop" as const,
+      ease: "linear" as const,
+      duration: animationSpeed,
     },
+  };
+
+  useEffect(() => {
+    if (marqueeWidth > 0) {
+      controls.set({ x: initialX }); // Reset to initial position on width/direction change
+      controls.start(scrollAnimation);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [marqueeWidth, direction, animationSpeed]);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    controls.stop();
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (marqueeWidth > 0) controls.start(scrollAnimation);
   };
 
   return (
@@ -58,13 +76,14 @@ export default function Marquee({
       className={`overflow-hidden whitespace-nowrap w-full py-3 relative ${
         isHovered ? "cursor-pointer" : ""
       } ${backgroundColor} ${textColor}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <motion.div
         ref={marqueeRef}
         className="flex gap-8 items-center w-max"
-        animate={!isHovered ? animation : undefined}
+        initial={{ x: initialX }}
+        animate={controls}
       >
         {duplicatedItems.map((item, idx) =>
           item.type === "text" ? (
