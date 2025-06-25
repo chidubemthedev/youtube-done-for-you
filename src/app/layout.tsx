@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "YTVideos.io - Grow Your YouTube Automation Channel",
+  title: "YTDFY.com - Grow Your YouTube Automation Channel",
   description:
     "Completely automate your YouTube channel without relying on freelancers. Get access to top talent editors, voice actors, and more!",
   keywords: [
